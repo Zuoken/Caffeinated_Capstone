@@ -1,0 +1,116 @@
+﻿* {
+    font-family: Calibri;
+}
+
+body {
+    background-color: #d89427;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+footer {
+    background-color: #d89427;
+    clear: both;
+    display: block;
+    margin: 0;
+    padding: 20px 0 20px 0;
+    width: 100%;
+    height: 50px;
+}
+
+html {
+    height: 100%;
+}
+
+#loginForm {
+    background-color: lightgrey;
+    border: 1px solid black;
+    width: 500px;
+    margin: 100px auto 500px auto;
+    padding: 15px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.caffeineLogin {
+    margin: auto;
+}
+
+#loginHead {
+    margin: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#loginBody {
+}
+
+.registrationForm {
+    border: 1px solid black;
+    margin: 100px auto 500px auto;
+}
+
+#registrationHeader {
+    text-align: center;
+    background-color: brown;
+    color: white;
+    font-weight: bold;
+}
+
+    #registrationHeader h2 {
+        margin: 0;
+        padding: 5px;
+        width: 458px;
+    }
+
+#registrationBody {
+    text-align: right;
+    margin: auto auto auto 0px;
+    padding: 10px;
+    width: 498px;
+}
+
+#headerTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+    font-family: Calibri;
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+    #headerTitle a, #headerTitle a:link, #headerTitle #loginStatus {
+        color: white;
+        text-decoration: none;
+    }
+
+#footerTitle {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: Calibri;
+}
+
+#maincontent {
+    background-color: white;
+    min-height: 500px;
+    height: 100%;
+    height: auto;
+    margin: 0 0 10px 0;
+    padding: 10px;
+}
+
+#navbar_table tr a {
+    text-decoration: none;
+}
+
+#navbar_table td {
+    width: 200px;
+    display: inline-block;
+}

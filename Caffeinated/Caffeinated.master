@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="caffeinated.master.cs" Inherits="Caffeinated" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Caffeinated</title>
+    <link href="main.css" rel="stylesheet" />
+    <style>
+        #navbar_header table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #navbar_header a {
+            color: black;
+        }
+
+            #navbar_header a:visited {
+                color: black;
+            }
+
+        #home_link a, #recipes_link a, #discussion_link a, #blog_link a, #messages_link a, #profile_link a, #loginStatus a, #logoutStatus a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 70px;
+            margin-top: auto;
+        }
+
+            #home_link a:hover, #recipes_link a:hover, #discussion_link a:hover, #blog_link a:hover, #messages_link a:hover, #profile_link a:hover {
+                background-color: purple;
+                color: white;
+                box-shadow: 3px 3px 3px #482400;
+            }
+
+            #home_link a:active, #recipes_link a:active, #discussion_link a:active, #blog_link a:active, #messages_link a:active, #profile_link a:active {
+                background-color: #000066;
+                color: white;
+                box-shadow: 3px 3px 3px #482400;
+            }
+
+            #loginStatus a:hover {
+                background-color: green;
+                color: white;
+                box-shadow: 3px 3px 3px #482400;
+            }
+
+            #loginStatus a:active {
+                background-color: #004d00;
+                color: white;
+            }
+
+            #logoutStatus a:hover {
+                background-color: #b30000;
+                color: white;
+                box-shadow: 3px 3px 3px #482400;
+            }
+
+            #logoutStatus a:active {
+                background-color: #800000;
+                color: white;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="content" runat="server">
+        <!-- Navbar -->
+        <header id="navbar_header">
+            <table id="navbar_table">
+                <!-- Navbar is entirely one row -->
+                <tr>
+                    <!-- Navbar has different functionality depending on if user is logged in or not -->
+                    <asp:LoginView ID="navbarLoginView" runat="server">
+                        <AnonymousTemplate>
+                            <!-- Logo -->
+                            <td id="headerTitle">
+                                <p><a href="default.aspx" style="color: white;">Caffeinated</a></p>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td id="loginStatus">
+                                <asp:LoginStatus ID="LoginStatus" runat="server" LogoutPageUrl="~/login.aspx" Font-Strikeout="False" />
+                            </td>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <!-- Logo -->
+                            <td id="headerTitle">
+                                <p><a href="home.aspx" style="color: white;">Caffeinated</a></p>
+                            </td>
+                            <td id="space"></td>
+                            <td id="home_link"><a href="home.aspx">Home</a></td>
+                            <td id="recipes_link"><a href="recipes.aspx">Recipes</a></td>
+                            <td id="discussion_link"><a href="discussion.aspx">Discussion</a></td>
+                            <td id="blog_link"><a href="blog.aspx">Blog</a></td>
+                            <td id="messages_link"><a href="messages.aspx">Messages</a></td>
+                            <td id="profile_link"><a href="profile.aspx">Profile</a></td>
+                            <td id="logoutStatus">
+                                <asp:LoginStatus ID="LoginStatus" runat="server" LogoutPageUrl="~/login.aspx" />
+                            </td>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </tr>
+            </table>
+        </header>
+
+        <div id="maincontent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <footer>
+            <p id="footerTitle">
+                Caffeinated - 2015 Cameron Winters
+            </p>
+        </footer>
+    </form>
+</body>
+</html>
